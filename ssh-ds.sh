@@ -15,10 +15,11 @@ createTunnel() {
 	# Register AFP as service via dns-sd
 	dns-sd -R $LABEL _afpovertcp._tcp . 12345 > /dev/null &
 
-	# Create tunnel to port 548 on remote host and make it avaliable at port 12345 at localhost 
+	# Create tunnel to port 548 on remote host and make it avaliable at port 12345 at localhost
+    # Also tunnel ssh for connection testing purposes
 	ssh -gN \
 	-L 12345:127.0.0.1:548 \
-	-L 19922:127.0.0.1:22 \ # also tunnel ssh for connection testing purposes
+	-L 19922:127.0.0.1:22 \
 	-C $REMOTELOGIN &
 
 	if [[ $? -eq 0 ]]; then
