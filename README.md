@@ -1,5 +1,3 @@
-# README
-
 ssh-ds is a small shell script that tunnels the AFP port of your disk station (and propably every other NAS with AFP and SSH services running) over ssh to your client computer.
 
 So you can access your files and do Time Machine backups on a secured SSH connection via internet.
@@ -10,11 +8,15 @@ You run the script via cron to ensure that the connection still exists. If the t
 
 ## TODO
 
-- Find a better way for closing the tunnel than 'killall -9 ssh'. It's kinda dirty at the moment. 
+- Add support for config files
 
 ## CHANGELOG
 
-### 2011-12-24
+### 2011-12-26
+- Fixed some small bugs with background processes regarding hangups of the script
+- Added verbose mode (-v or --verbose)
+- Implemented a cleaner way to kill the processes
 
+### 2011-12-24
 - Initial release
 
