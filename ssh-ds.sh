@@ -9,6 +9,8 @@ LABEL="DiskStation" # The label for the service, that's registered with dns-sd
 
 ## NO NEED TO EDIT BELOW THIS LINE
 
+VERSION="2011-12-27"
+
 VERBOSE=false
 
 REMOTELOGIN="$REMOTEUSER@$REMOTEHOST"
@@ -40,7 +42,7 @@ killTunnel() {
 }
 
 help() {
-    echo "ssh-ds  version 2011-12-26
+    echo "ssh-ds  version $VERSION
 
 ssh-ds is a small shell script that tunnels the AFP port of your disk station
 (and propably every other NAS with AFP and SSH services running) over ssh to your client computer.
