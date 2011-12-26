@@ -39,6 +39,22 @@ killTunnel() {
     echo All processes killed
 }
 
+help() {
+    echo "ssh-ds  version 2011-12-26
+
+ssh-ds is a small shell script that tunnels the AFP port of your disk station
+(and propably every other NAS with AFP and SSH services running) over ssh to your client computer.
+
+Put your settings in the config section in the script itself!
+
+Options
+ -v, --verbose               increase verbosity
+ -k, --kill                  kill all ssh-ds processes
+ -h, --help                  show this screen
+"
+exit 0
+}
+
 # Yippieeh, commandline parameters
 
 while [ $# -gt 0 ]; do    # Until you run out of parameters . . .
@@ -49,6 +65,9 @@ while [ $# -gt 0 ]; do    # Until you run out of parameters . . .
         ;;
         -v|--verbose)
             VERBOSE=true
+        ;;
+        -h|--help)
+            help
         ;;
         *)
  

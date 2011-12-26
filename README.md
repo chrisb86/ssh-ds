@@ -12,6 +12,9 @@ You run the script via cron to ensure that the connection still exists. If the t
 
 ## CHANGELOG
 
+### 2011-12-27
+- Added a help screen (-h or --help)
+
 ### 2011-12-26
 - Fixed some small bugs with background processes regarding hangups of the script
 - Added verbose mode (-v or --verbose)
